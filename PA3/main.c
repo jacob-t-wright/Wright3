@@ -19,7 +19,13 @@ int main (void)
 	outfile = fopen ("output.dat", "w");
 	//Reads five records from the input file (input.dat); You will need to use a combination of read_double ( ) and read_integer ( ) function calls here!
 	read_record = read_double (infile);
-	read_record = read_integer (infile);
+	
+	
+	// This line is incorrect
+	// read_record is an double, but read_integer returns an int
+	// This isn't a huge deal, but you have another problem
+	// Say line 21 reads some important data, not line 28 will read and replace the data you had.
+	read_record = read_integer (infile);  
 	
 
 
